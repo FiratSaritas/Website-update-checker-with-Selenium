@@ -31,7 +31,7 @@ Set up Telegram bot with the [`BotFather`](https://www.codementor.io/@karandeepb
 
 ### Run project
 
-First we want to make a screenshot of the default webpage as it looks at the moment and save it. Once you want to change the default screenshot, you just need to run this code again. To know which webpage to access, you need to add the link of the website in the [`code`](https://github.com/FiratSaritas/Website-update-checker-with-Selenium/blob/ca040e76e87ccccf254be80de4532ace33220dae/default_image_creater.py#L11).
+First we want to make a screenshot of the default webpage as it looks at the moment and save it. Once you want to change the default screenshot, you just need to run this code again. To know which webpage to access, you need to add the link of the website in the [`code`](https://github.com/FiratSaritas/Website-update-checker-with-Selenium/blob/675b21fd356574d5ef6c66243645999781d5975c/default_image_creater.py#L11).
 
 ```sh
     python default_image_creater.py
