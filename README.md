@@ -2,49 +2,22 @@
 
 ## About project
 This repository covers a simple function, but one that makes life easier for some: It uses Selenium to visually check if the webpage has changed every 20 seconds (the [`time`](https://github.com/FiratSaritas/Website-update-checker-with-Selenium/blob/d2ebf43fbf380bd7d65831ab1225c9e5fb9b8255/website_update_checker.py#L33) can be adjusted in the code).
-If there is a change in the webpage, you can send a message on telegram. this code can be used for many different websites, because it checks visually and no source code in the background.
+If there is a change in the webpage, it sends a message on telegram. This code can be used for many different websites, because it checks visually and no source code in the background.
 
-## Folder Structure Conventions
-
-```
-    ├── Checklists             # Checklists for a clean code and project (files type: pdf)
-    ├── augmentation           # Use of different data augmentations (files type: ipynb)
-    ├── data                   # Data of the project (files type: csv)
-    │   ├── archive
-    ├── eda                    # Exploratory data analysis (files type: ipynb)
-    ├── model                  # Different trained models (files type: ipynb)
-    │   ├── final              # Calls final model and makes a prediction (files type: py)
-    ├── utils                  # outsourced functions (files type: py)
-    │   ├── archive
-    │   ├── dataset            # dataset functions (files type: py)
-    │   │   ├── tests
-    │   ├── plots              # plot functions (files type: py)
-    │   │   ├── tests
-    │   ├── training           # training functions (files type: py)
-    │   │   ├── tests
-    └── README.md             
-    └── git_workflow.md
-    └── requirements.txt
-```
 
 ## Getting Started
 
 ### Installation
 Clone project locally
  ```sh
-    git@github.com:FiratSaritas/manhole-cover-classification.git
+    git@github.com:FiratSaritas/Website-update-checker-with-Selenium.git
  ```
 
 ### Downloads
 
-#### Model:
-Download model from Google Drive and add it to the folder ./model here:
-**link** (not ready yet)
+#### Chromedirver
 
-#### Images (optional):
-Download images as Folder (images_transformed) from Google Drive and add it to the folder ./data here:
-([https://drive.google.com/drive/folders/1y5T1-WUZB1Vsp87aBiU6hDxagiY2mGgi?usp=sharing](https://drive.google.com/drive/folders/1y5T1-WUZB1Vsp87aBiU6hDxagiY2mGgi?usp=sharing))
-
+You can download your matching Selenium Chromedriver here: https://chromedriver.chromium.org/downloads. and put the file in the same folder.
 
 
 ### Prerequisites 
@@ -53,21 +26,20 @@ Install required packages
     pip install -r requirements.txt
  ```
 
+Set up Telegram bot with the [`BotFather`](https://www.codementor.io/@karandeepbatra/part-1-how-to-create-a-telegram-bot-in-python-in-under-10-minutes-19yfdv4wrq)
+
+
 ### Run project
 
-### Run test
+First we want to make a screenshot of the default webpage as it looks at the moment and save it. Once you want to change the default screenshot, you just need to run this code again. To know which webpage to access, you need to add the link of the website in the [`code`](https://github.com/FiratSaritas/Website-update-checker-with-Selenium/blob/ca040e76e87ccccf254be80de4532ace33220dae/default_image_creater.py#L11).
 
-There are tests for the outsourced python files. These python files are located in the "utils" folder. There are subfolders of the corresponding classes (e.g. dataset). There is a folder with the name "tests" and there are the unittests. 
-You can run a test with the following code:
 ```sh
-    python -m unittest [name of the testfile]
+    python default_image_creater.py
+ ```
+Then we run the actual code that checks the page for changes by taking a new screenshot and comparing it to the default screenshot.
+Here also arguments have to be added to the [`code`](https://github.com/FiratSaritas/Website-update-checker-with-Selenium/blob/de15df5395113a12b56b99ef0d6ae1bde61366a0/website_update_checker.py#L6). 
+ 
+ ```sh
+    python website_update_checker.py
  ```
 
-## Project status
-This project is still in progress.
-
-## Contact
-
-firat.saritas@students.fhnw.ch<br />
-simon.staehli@students.fhnw.ch<br />
-kajenthini.kobivasan@students.fhnw.ch
