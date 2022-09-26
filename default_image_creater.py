@@ -8,7 +8,7 @@ with open("token.txt") as file:
 
 driver = webdriver.Chrome('chromedriver')
 
-web_link = 'https://reserve-prime.apple.com/CH/de_CH/reserve/A/availability?iUP=N'
+web_link = ''
 
 driver.get(web_link)
 
